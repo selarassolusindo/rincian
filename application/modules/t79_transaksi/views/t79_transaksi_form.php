@@ -25,9 +25,10 @@
                         <div class="col-sm-3">
                             <!-- <input type="text" class="form-control" name="sekolah" id="sekolah" placeholder="Sekolah" value="<?php echo $sekolah; ?>" /> -->
                             <select class="form-control" name="sekolah" id="sekolah">
-                                <option value="">-</option>
+                                <option value="">Semua</option>
                                 <?php foreach($listSekolah as $row) { ?>
-                                <option value="<?php echo $row->idsekolah ?>" <?php echo $row->idsekolah == $sekolah ? "selected" : "" ?>><?php echo $row->nama  ?></option>
+                                <!-- <option value="<?php echo $row->idsekolah ?>" <?php echo $row->idsekolah == $sekolah ? "selected" : "" ?>><?php echo $row->nama  ?></option> -->
+                                <option value="<?php echo $row->nama ?>" <?php echo $row->idsekolah == $sekolah ? "selected" : "" ?>><?php echo $row->nama  ?></option>
                                 <?php } ?>
                             </select> <?php echo form_error('sekolah') ?>
                         </div>
@@ -38,9 +39,10 @@
                         <div class="col-sm-3">
                             <!-- <input type="text" class="form-control" name="tahun_ajaran" id="tahun_ajaran" placeholder="Tahun Ajaran" value="<?php echo $tahun_ajaran; ?>" /> -->
                             <select class="form-control" name="tahun_ajaran" id="tahun_ajaran">
-                                <option value="">-</option>
+                                <option value="">Semua</option>
                                 <?php foreach($listTahunajaran as $row) { ?>
-                                <option value="<?php echo $row->idtahunajaran ?>" <?php echo $row->idtahunajaran == $tahun_ajaran ? "selected" : "" ?>><?php echo $row->tahun_ajaran  ?></option>
+                                <!-- <option value="<?php echo $row->idtahunajaran ?>" <?php echo $row->idtahunajaran == $tahun_ajaran ? "selected" : "" ?>><?php echo $row->tahun_ajaran  ?></option> -->
+                                <option value="<?php echo $row->tahun_ajaran ?>" <?php echo $row->idtahunajaran == $tahun_ajaran ? "selected" : "" ?>><?php echo $row->tahun_ajaran  ?></option>
                                 <?php } ?>
                             </select> <?php echo form_error('tahun_ajaran') ?>
                         </div>
@@ -51,9 +53,10 @@
                         <div class="col-sm-3">
                             <!-- <input type="text" class="form-control" name="kelas" id="kelas" placeholder="Kelas" value="<?php echo $kelas; ?>" /> -->
                             <select class="form-control" name="kelas" id="kelas">
-                                <option value="">-</option>
+                                <option value="">Semua</option>
                                 <?php foreach($listKelas as $row) { ?>
-                                <option value="<?php echo $row->idkelas ?>" <?php echo $row->idkelas == $kelas ? "selected" : "" ?>><?php echo $row->kelas . ' - ' . $row->sub_kelas  ?></option>
+                                <!-- <option value="<?php echo $row->idkelas ?>" <?php echo $row->idkelas == $kelas ? "selected" : "" ?>><?php echo $row->kelas . ' - ' . $row->sub_kelas  ?></option> -->
+                                <option value="<?php echo $row->kelas . '#%' . $row->sub_kelas ?>" <?php echo $row->idkelas == $kelas ? "selected" : "" ?>><?php echo $row->kelas . ' - ' . $row->sub_kelas  ?></option>
                                 <?php } ?>
                             </select> <?php echo form_error('kelas') ?>
                         </div>

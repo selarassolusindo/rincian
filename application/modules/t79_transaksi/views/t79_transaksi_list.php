@@ -78,6 +78,7 @@
         <script src="<?php echo base_url('assets/datatables/dataTables.bootstrap.js') ?>"></script>
         <script type="text/javascript">
             $(document).ready(function() {
+
                 $.fn.dataTableExt.oApi.fnPagingInfo = function(oSettings)
                 {
                     return {
@@ -114,7 +115,7 @@
                     },
                     processing: true,
                     serverSide: true,
-                    ajax: {"url": "t30_transaksi/json", "type": "POST",
+                    ajax: {"url": "t79_transaksi/json", "type": "POST",
                         "data": function(data) {
                             data.no_urut = $('#no_urut').val();
                             data.tgl_buat = $('#tgl_buat').val();
@@ -176,6 +177,13 @@
                         });
                     }
                 });
+
+                // pengisian textbox search
+                $('#sekolah').val(`<?php echo $sekolah ?>`);
+                $('#tahun_ajaran').val(`<?php echo $tahun_ajaran ?>`);
+                $('#kelas').val(`<?php echo $kelas ?>`);
+                $('#sub_kelas').val(`<?php echo $sub_kelas ?>`);
+                t.draw();
 
             });
         </script>

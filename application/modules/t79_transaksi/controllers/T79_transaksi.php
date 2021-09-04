@@ -10,6 +10,7 @@ class T79_transaksi extends CI_Controller
     function __construct()
     {
         parent::__construct();
+        $this->load->model('t79_transaksi/T79_transaksi_model');
         $this->load->model('t30_transaksi/T30_transaksi_model');
         $this->load->library('form_validation');
 		$this->load->library('datatables');
@@ -30,7 +31,7 @@ class T79_transaksi extends CI_Controller
         $listRincian = $this->T04_rincian_model->get_all();
         $data = array(
             'button' => 'Proses',
-            'action' => site_url('t79_transaksi/index_action'),
+            'action' => site_url('t79_transaksi/indexAction'),
             // 'idrincian' => set_value('idrincian'),
             'sekolah' => set_value('sekolah'),
 		    'tahun_ajaran' => set_value('tahun_ajaran'),
@@ -47,9 +48,28 @@ class T79_transaksi extends CI_Controller
         $this->load->view('_00_dashboard/_00_dashboard', $data);
     }
 
-    public function index_action()
+    public function indexAction()
     {
-        
+        $sekolah = $this->input->post('sekolah', TRUE);
+        $tahun_ajaran = $this->input->post('tahun_ajaran', TRUE);
+        $kelas = explode("#%", $this->input->post('kelas', TRUE));
+
+        $data = array(
+            'sekolah' => $sekolah,
+            'tahun_ajaran' => $tahun_ajaran,
+            'kelas' => $kelas[0],
+            'sub_kelas' => $kelas[1],
+        );
+
+        $data['_view'] = 't79_transaksi/t79_transaksi_list';
+        $data['_caption'] = 'Laporan Data Transaksi';
+        $this->load->view('_00_dashboard/_00_dashboard', $data);
+    }
+
+    public function json()
+    {
+        header('Content-Type: application/json');
+        echo $this->T79_transaksi_model->json();
     }
 
     public function index_old()
