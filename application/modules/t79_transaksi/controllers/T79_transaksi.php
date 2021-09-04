@@ -47,6 +47,11 @@ class T79_transaksi extends CI_Controller
         $this->load->view('_00_dashboard/_00_dashboard', $data);
     }
 
+    public function index_action()
+    {
+        
+    }
+
     public function index_old()
     {
         // $this->load->view('t30_transaksi/t30_transaksi_list');
