@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Aug 30, 2021 at 01:27 AM
+-- Generation Time: Sep 04, 2021 at 06:38 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.4.15
 
@@ -588,7 +588,7 @@ CREATE TABLE `t90_users` (
 --
 
 INSERT INTO `t90_users` (`id`, `ip_address`, `username`, `password`, `email`, `activation_selector`, `activation_code`, `forgotten_password_selector`, `forgotten_password_code`, `forgotten_password_time`, `remember_selector`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `company`, `phone`) VALUES
-(1, '127.0.0.1', 'administrator', '$2y$10$dPHoARWNwi3q8RSaACTb6O0dK8fTNUfJ7K52jxOG7Bn15x2WHOciu', 'admin@admin.com', NULL, '', NULL, NULL, NULL, NULL, NULL, 1268889823, 1630232217, 1, 'Administrator', 'istrator', 'ADMIN', '0'),
+(1, '127.0.0.1', 'administrator', '$2y$10$EMdNyHguV0d5ndc9yiueSulbQGdNDqSZ6QcKrCYAy0PstA2wQCwcu', 'admin@admin.com', NULL, '', NULL, NULL, NULL, NULL, NULL, 1268889823, 1630714372, 1, 'Administrator', 'istrator', 'ADMIN', '0'),
 (2, '::1', 'dodo', '$2y$10$45w8AaYwozR/hjmH.Qm0.OMxwJJs6BmFBbn2AIQP16NuDDDxbfvU6', 'e135146@f135146.g135146', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1625399506, 1628410468, 1, 'Dodo Ananto', NULL, NULL, NULL),
 (3, '::1', 'budi', '$2y$10$MvzwSXUbEi.0mYppxcxc9.6u1lE2K13ELcpw8GJkr1Xdo9co9aOjC', 'e195422@f195422.g195422', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1626198862, 1627203728, 1, 'Budi Wiranto', NULL, NULL, NULL),
 (4, '::1', 'ilham', '$2y$10$X9GVQQk4pD5UPWgbM8Qgq.4ljAUX.Fjytf3vXg5CahIcfMRDA6ac.', 'e212914@f212914.g212914', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1626204554, NULL, 1, 'Ilham', NULL, NULL, NULL),
@@ -651,13 +651,6 @@ CREATE TABLE `t93_login_attempts` (
   `login` varchar(100) NOT NULL,
   `time` int(11) UNSIGNED DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `t93_login_attempts`
---
-
-INSERT INTO `t93_login_attempts` (`id`, `ip_address`, `login`, `time`) VALUES
-(8, '::1', 'admin@admin.com', 1630209915);
 
 -- --------------------------------------------------------
 
@@ -1104,7 +1097,7 @@ ALTER TABLE `t92_users_groups`
 -- AUTO_INCREMENT for table `t93_login_attempts`
 --
 ALTER TABLE `t93_login_attempts`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `t99_company`
